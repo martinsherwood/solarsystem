@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge; chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+	<title>Solar System</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+</head>
+
+	<body class="set-speed">
+
+		<header class="title ui">
+            <h1 class="overview">Our Solar System</h1>
+		</header>
+        <div class="solar-system-info ui">
+            <h2>Basic Facts:</h2>
+            <p>A solar system refers to a star and all the objects that travel in orbit around it. Our solar system consists of the sun - our star - eight planets and their natural satellites (such as our moon); dwarf planets; asteroids and comets. Our solar system is located in an outward spiral of the Milky Way galaxy.</p>
+            
+            <p>The eight planets are Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus and Neptune.</p>
+            
+            <h2>How big is our solar system?</h2>
+            <p>To think about the large distances, we use a cosmic ruler based on the astronomical unit (AU). One AU is the distance from Earth to the Sun, which is about 150 million kilometers or 93 million miles. Particles from the Sun can reach far beyond the planets, forming a giant bubble called the heliosphere. The enormous bubble of the heliosphere is created by the solar wind, a stream of charged gas blowing outward from the Sun. As the Sun orbits the center of the Milky Way, the bubble of the heliosphere moves also, creating a bow shock ahead of itself in interstellar space - like the bow of a ship in water - as it crashes into the interstellar gases. The region where the solar wind is abruptly slowed by pressure from gas between the stars is called the termination shock.</p>
+        </div>
+
+		<div class="help"></div>
+		<div class="hide-ui"></div>
+
+		<!--data taken from: http://solarsystem.nasa.gov/planets/-->
+		<nav id="data" class="planet-select ui">
+			<a class="sun" data-planet="Sun" data-info="The sun is a star, a hot ball of glowing gases at the heart of our solar system. Its influence extends far beyond the orbits of distant Neptune and Pluto. Without the sun's intense energy and heat, there would be no life on Earth. And though it is special to us, there are billions of stars like our sun scattered across the Milky Way galaxy." data-gravity="274.0 m/s" data-temperature="5,500 °C" data-composition="Hydrogen, Helium" href="#sun">Sun</a>
+
+			<a class="mercury" data-planet="Mercury" data-info="Mercury's eccentric orbit takes the small planet as close as 47 million km (29 million miles) and as far as 70 million km (43 million miles) from the sun. If one could stand on the scorching surface of Mercury when it is at its closest point to the sun, the sun would appear more than three times as large as it does when viewed from Earth." data-gravity="3.7 m/s" data-temperature="-173/427 (min/max) °C" data-composition="70% metals and 30% silicate material" href="#mercury">Mercury</a>
+
+			<a class="venus" data-planet="Venus" data-info="Similar in structure and size to Earth, Venus' thick, toxic atmosphere traps heat in a runaway greenhouse effect. A permanent layer of clouds traps heat, creating surface temperatures hot enough to melt lead. Glimpses below the clouds reveal volcanoes and deformed mountains. Venus spins slowly in the opposite direction of most planets." data-gravity="8.87 m/s" data-temperature="462 °C" data-composition="Carbon Dioxide, Nitrogen" href="#venus">Venus</a>
+
+			<a class="earth active" data-planet="Earth" data-info="Earth, our home planet, is the only planet in our solar system known to harbor life - life that is incredibly diverse. All the things we need to survive exist under a thin layer of atmosphere that separates us from the cold, airless void of space." data-gravity="9.80665 m/s" data-temperature="-88/58 (min/max) °C" data-composition="Nitrogen, Oxygen" href="#earthspeed">Earth</a>
+
+			<!--<a class="moon" title="moon" data-planet="Moon" data-info="Our moon makes Earth a more livable planet by moderating our home planet's wobble on its axis, leading to a relatively stable climate, and creating a rhythm that has guided humans for thousands of years. The moon was likely formed after a Mars-sized body collided with Earth and the debris formed into the most prominent feature in our night sky." data-gravity="1.624 m/s" data-temperature="-233/123 °C" data-composition="Speculated metallic iron, with small amounts of sulfur and nickel" href="#moonspeed">Moon</a>-->
+
+			<a class="mars" data-planet="Mars" data-info="Mars is a cold desert world. It is half the diameter of Earth and has the same amount of dry land. Like Earth, Mars has seasons, polar ice caps, volcanoes, canyons and weather, but its atmosphere is too thin for liquid water to exist for long on the surface. There are signs of ancient floods on Mars, but evidence for water now exists mainly in icy soil and thin clouds." data-gravity="3.71 m/s" data-temperature="-153 to +20 (min/max) °C" data-composition="Carbon Dioxide, Nitrogen, Argon" href="#mars">Mars</a>
+
+			<a class="jupiter" data-planet="Jupiter" data-info="Jupiter, the most massive planet in our solar system - with dozens of moons and an enormous magnetic field - forms a kind of miniature solar system. Jupiter does resemble a star in composition, but it did not grow big enough to ignite. The planet's swirling cloud stripes are punctuated by massive storms such as the Great Red Spot, which has raged for hundreds of years." data-gravity="24.79 m/s" data-temperature="-148 °C" data-composition="Hydrogen, Helium" href="#jupiter">Jupiter</a>
+
+			<a class="saturn" data-planet="Saturn" data-info="Adorned with thousands of beautiful ringlets, Saturn is unique among the planets. All four gas giant planets have rings - made of chunks of ice and rock - but none are as spectacular or as complicated as Saturn's. Like the other gas giants, Saturn is mostly a massive ball of hydrogen and helium." data-gravity="10.4* m/s" data-temperature="-178 °C" data-composition="Hydrogen, Helium" href="#saturn">Saturn</a>
+
+			<a class="uranus" data-planet="Uranus" data-info="Uranus is the only giant planet whose equator is nearly at right angles to its orbit. A collision with an Earth-sized object may explain the unique tilt. Nearly a twin in size to Neptune, Uranus has more methane in its mainly hydrogen and helium atmosphere than Jupiter or Saturn. Methane gives Uranus its blue tint." data-gravity="8.87 m/s" data-temperature="-216 °C" data-composition="Hydrogen, Helium, Methane" href="#uranus">Uranus</a>
+
+			<a class="neptune" data-planet="Neptune" data-info="Dark, cold and whipped by supersonic winds, Neptune is the last of the hydrogen and helium gas giants in our solar system. More than 30 times as far from the sun as Earth, the planet takes almost 165 Earth years to orbit our sun. In 2011 Neptune completed its first orbit since its discovery in 1846. We see Neptune as Columbus saw America from the coast of Spain." data-gravity="11.15 m/s" data-temperature="-214 °C" data-composition="Hydrogen, Helium, Methane" href="#neptune">Neptune</a>
+		</nav>
+
+		<div id="options" class="info-select ui">
+			<div class="show-speed">Show Velocity</div>
+			<div class="show-distance">Show Distance</div>
+			<div class="show-size">Show Circumference</div>
+		</div>
+
+		<div id="universe">
+			<div id="galaxy">
+				<div id="solar-system" class="earth">
+					<div id="mercury" class="orbit">
+						<div class="pos">
+							<div class="planet">
+								<dl class="infos ui">
+									<dt>Mercury</dt>
+									<dd><span></span></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div id="venus" class="orbit">
+						<div class="pos">
+							<div class="planet">
+								<dl class="infos ui">
+									<dt>Venus</dt>
+									<dd><span></span></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div id="earth" class="orbit">
+						<div class="pos">
+							<div class="orbit">
+								<div class="pos">
+									<div class="moon">
+										<!--<dl class="infos ui">
+											<dt>Moon</dt>
+											<dd><span></span></dd>
+										</dl>-->
+									</div>
+								</div>
+							</div>
+							<div class="planet">
+								<dl class="infos ui">
+									<dt>Earth</dt>
+									<dd><span></span></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div id="mars" class="orbit">
+						<div class="pos">
+							<div class="planet">
+								<dl class="infos ui">
+									<dt>Mars</dt>
+									<dd><span></span></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div id="jupiter" class="orbit">
+						<div class="pos">
+							<div class="planet">
+								<dl class="infos ui">
+									<dt>Jupiter</dt>
+									<dd><span></span></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div id="saturn" class="orbit">
+						<div class="pos">
+							<div class="planet">
+								<div class="ring"></div>
+								<dl class="infos ui">
+									<dt>Saturn</dt>
+									<dd><span></span></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div id="uranus" class="orbit">
+						<div class="pos">
+							<div class="planet">
+								<dl class="infos ui">
+									<dt>Uranus</dt>
+									<dd><span></span></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div id="neptune" class="orbit">
+						<div class="pos">
+							<div class="planet">
+								<dl class="infos ui">
+									<dt>Neptune</dt>
+									<dd><span></span></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div id="sun">
+						<dl class="infos ui">
+							<dt>Sun</dt>
+							<dd><span></span></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<aside class="help-pane ui">
+			<button id="close-help" class="close" role="button">X</button>
+			<h1>Help</h1>
+			<ol>
+                <li>Click the Our Solar System title in the top, left to view some basic information and facts about the solar system.</li>
+				<li>Select a planet in the selection bar across the bottom to view facts about that planet in hovering tool tips.</li> 
+				<li>Use the Velocity, Distance and Size buttons in the bottom, right corner to switch between the information being shown in the tool tips for the planets.</li>
+				<li>Double click on on the planet name in the selection bar to view more information and details about that planet in an modal windows.</li>
+					<ul>
+						<li>In those modal windows, you can click the speech icon in the bottom, left corner to have the information read to you by the browser.</li>
+					</ul>
+				<li>Hide all user interface elements by clicking the eye icon in the top, right corner of the screen.</li>
+			</ol>
+		</aside>
+
+		<div class="mask" role="dialog"></div>
+		<div class="modal" role="alert">
+			<button class="close" role="button">X</button>
+			<div class="content">
+				<h1></h1>
+				<p></p>
+				<ul>
+					<li>Surface Gravity: <span class="gravity"></span><sup>2</sup></li>
+					<li>Surface Temperature: <span class="temperature"></span></li>
+					<li>Composition: <span class="composition"></span></li>
+				</ul>
+			</div>
+			<div class="speak"></div>
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

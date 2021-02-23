@@ -1,0 +1,159 @@
+html, body {
+	@include size(100%, 100%);
+	overflow: hidden;
+}
+
+html {
+	box-sizing: border-box; //apply box-model
+	text-size-adjust: 100%;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	font: normal 1em/1.45em "Catamaran", sans-serif;
+	font-weight: 300;
+	color: #ffffff;
+	background: radial-gradient(ellipse at bottom, #1C2837 0%, #050608 100%);
+	background-attachment: fixed;
+}
+
+h1 {
+	font-size: 1.6em;
+	font-weight: 300;
+}
+
+h1.overview {
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+#universe {
+	@include size(100%);
+	position: absolute;
+	overflow: hidden;
+	z-index: 1;
+	background-position: center 40%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-size: 80%; //size of the universe
+}
+
+#galaxy {
+	@include size(100%);
+	position: relative;
+}
+
+#solar-system {
+	@include size(100%);
+	font-size: 62%; //size of the system
+	position: absolute;
+	transform-style: preserve-3d;
+	transform: rotateX(75deg);
+}
+
+.orbit {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border: 3px solid rgba(255, 255, 255, .2); //was 1px
+	border-radius: 50%;
+	transform-style: preserve-3d;
+	animation-name: orbit;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+//active planet orbit highlight
+.mercury #mercury.orbit, .venus #venus.orbit, .earth #earth.orbit, .mars #mars.orbit, .jupiter #jupiter.orbit, .saturn #saturn.orbit, .uranus #uranus.orbit, .neptune #neptune.orbit {
+	border: 3px solid rgba(255, 255, 255, .8); //was 1px
+}
+
+//moon orbit ring
+#earth .pos .orbit {
+	border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+//moon orbit animation
+.orbit .orbit {
+	animation-name: subOrbit;
+}
+
+.pos {
+	@include size(2em);
+	position: absolute;
+	top: 50%;
+	//width: 2em;
+	//height: 2em;
+	margin-top: -1em;
+	margin-left: -1em;
+	transform-style: preserve-3d;
+	animation-name: invert;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+#sun, .planet, #earth .moon {
+	@include size(1em);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	//width: 1em;
+	//height: 1em;
+	margin-top: -.5em;
+	margin-left: -.5em;
+	border-radius: 50%;
+	transform-style: preserve-3d;
+}
+
+#sun {
+	background-color: #fb7209;
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-shadow: 0 0 60px rgba(255, 160, 60, .4);
+}
+
+.planet {
+	background-color: #202020;
+	background-repeat: no-repeat;
+	background-size: cover;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+.ring {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-radius: 50%;
+}
+
+#saturn .ring {
+	@include size(2em);
+	//width: 2em;
+	//height: 2em;
+	margin-top: -1em;
+	margin-left: -1em;
+	border: .3em solid rgba(160, 147, 130, .7);
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	
+		&::after {
+			@include size(2.2em);
+			border-radius: 50%;
+			position: absolute;
+			content: "";
+			top: 50%;
+			left: 50%;
+			//width: 2.2em;
+			//height: 2.2em;
+			margin-top: -1.1em;
+			margin-left: -1.1em;
+			border: .07em solid rgba(160, 147, 130, .5);
+			box-sizing: border-box;
+		}
+}

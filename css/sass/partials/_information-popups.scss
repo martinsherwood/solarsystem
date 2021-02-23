@@ -1,0 +1,203 @@
+.solar-system-info {
+    @include size(600px, 435px);
+    position: absolute;
+    top: 73px;
+    left: 30px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    transform: translate(-105%, 0);
+	transition: 0.5s ease-out;
+    
+        &-shown {
+            transform: translate(0, 0);
+        }
+        
+        h2, p {
+            margin-bottom: 10px;
+        }
+        
+        p:nth-of-type(2) {
+            margin-bottom: 20px;
+        }
+}
+
+/*popup styles*/
+.infos {
+	transition-duration: .8s;
+	transition-timing-function: ease-in-out;
+}
+
+dl.infos {
+	position: absolute;
+	display: block;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	margin-top: -90%;
+	margin-left: 90%;
+	padding-left: 100%;
+	transform-origin: 100% 100%;
+	transform-style: preserve-3d;
+	transform: rotateX(90deg);
+	
+		&::before {
+			position: absolute;
+			content: "";
+			width: 15px;
+			height: 30px;
+			left: 15px;
+			bottom: 0;
+			border-top: 1px solid white;
+			border-left: 1px solid white;
+			transform-style: preserve-3d;
+			transform: skew(-45deg, 0deg);
+			box-shadow: inset 1px 1px black;
+		}
+}
+
+//heading of the info popup
+dl.infos dt {
+	position: absolute;
+	left: 50px;
+	margin-bottom: 22px;
+	bottom: 30px;
+	color: #ffffff;
+	font-size: 18px;
+	text-shadow: 1px 1px 2px black;
+}
+
+//the actual data from css content
+dl.infos dd::after {
+	position: absolute;
+	left: 50px;
+	bottom: 30px;
+	width: 300px;
+	color: #ffffff;
+	font-size: 22px;
+	text-shadow: 1px 1px 2px black;
+}
+
+//this is the type being shown, e.g. velocity, distance etc
+dl.infos dd span::after {
+	position: absolute;
+	left: 50px;
+	bottom: 10px;
+	width: 300px;
+	color: #ffffff;
+	font-size: 14px;
+	text-shadow: 1px 1px 2px black;
+}
+
+/*.earth #earth .moon .infos,*/
+.sun #sun .infos, .mercury #mercury .infos, .venus #venus .infos, .earth #earth .infos, .mars #mars .infos, .jupiter #jupiter .infos, .saturn #saturn .infos, .uranus #uranus .infos, .neptune #neptune .infos {
+	display: block;
+	opacity: 1;
+	transform: rotateX(0deg);
+}
+
+/*modal windows*/
+.close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 35px;
+	height: 30px;
+	background: #000000;
+	color: #ffffff;
+	cursor: pointer;
+	border: 0;
+	outline: none;
+	transition: opacity .3s;
+	
+		&:hover {
+			opacity: .8;
+		}
+}
+
+.mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.50);
+	z-index: 50;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.7s;
+}
+
+.modal {
+	@include size(500px, 400px);
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #eaeaea;
+	z-index: 100;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.5s ease-out;
+	
+		div.content {
+			padding: 30px;
+			color: #000000;
+			cursor: default;
+			
+				h1, p {
+					margin-bottom: 10px;
+				}
+			
+				p, ul {
+					font-size: 1.1em;
+				}
+				
+				ul, ol {
+					padding-left: 2.5em;
+					
+						li {
+							margin-bottom: 10px;
+						}
+				}
+		}
+}
+
+.active {
+	visibility: visible;
+	opacity: 1;
+}
+
+.active + .modal {
+	visibility: visible;
+	opacity: 1;
+}
+
+.help-pane {
+	@include size(400px, 600px);
+	position: absolute;
+	top: 100px;
+	right: 0;
+	background: #eaeaea;
+	z-index: 100;
+	padding: 30px;
+	color: #000000;
+	cursor: default;
+	transform: translate(100%, 0);
+	transition: 0.5s ease-out;
+	
+		&-shown {
+			transform: translate(0, 0);
+		}
+			
+		h1, p {
+			margin-bottom: 10px;
+		}
+
+		ul, ol {
+			padding-left: 2em;
+
+				li {
+					margin-bottom: 10px;
+				}
+		}
+}
